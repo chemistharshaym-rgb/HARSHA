@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info>
+    <title>Custom Electrochem Citation Style</title>
+    <id>http://github.com/your-repo/custom-electrochem-style</id>
+    <link href="http://github.com/your-repo/custom-electrochem-style" rel="self"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+    <category citation-format="numeric"/>
+    <updated>2026-05-28T00:00:00+00:00</updated>
+  </info>
+
+  <!-- Author list -->
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", "/>
+    </names>
+  </macro>
+
+  <!-- Journal title -->
+  <macro name="journal">
+    <text variable="container-title" font-style="italic"/>
+  </macro>
+
+  <!-- Volume -->
+  <macro name="volume">
+    <text variable="volume" font-weight="bold"/>
+  </macro>
+
+  <!-- Year -->
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year" prefix="(" suffix=")"/>
+    </date>
+  </macro>
+
+  <!-- Page -->
+  <macro name="page">
+    <text variable="page"/>
+  </macro>
+
+  <!-- Citation numbers in-text -->
+  <citation>
+    <layout delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <!-- Bibliography layout -->
+  <bibliography>
+    <layout>
+      <text macro="author"/>
+      <text value=", "/>
+      <text macro="journal"/>
+      <text value=", "/>
+      <text macro="volume"/>
+      <text value=" "/>
+      <text macro="year"/>
+      <text value=" "/>
+      <text macro="page"/>
+      <text value="."/>
+    </layout>
+  </bibliography>
+</style>
